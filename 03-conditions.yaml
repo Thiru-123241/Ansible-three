@@ -1,0 +1,16 @@
+- name: install nginx based on OS\
+  hosts: backend
+  become: yes
+  tasks:
+  - name: install nginx if redhat
+    ansible.builtin.dnf:
+      name: nginx
+      state: latest
+    when: ansible_Os_Family == RedHat
+
+
+  - name: install nginx if Debian
+    ansible.builtin.apt:
+      name: nginx
+      state: latest
+    when: ansible_Os_Family == Debian 
