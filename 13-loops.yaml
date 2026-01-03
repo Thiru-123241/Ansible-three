@@ -1,0 +1,13 @@
+- name: commbine both
+  hosts: backend
+  become: yes
+  tasks:
+  - name: install packages and delete packages
+    ansible.builtin.package:
+      name: "{{ item.name }}"
+      state:  "{{ item.state }}"
+    loop:
+    - { 'name: nginx', 'state: present' }  
+    - { 'name: mysql-server', 'state: absent' }
+    - { 'name: zip', 'state: absent' }
+    
