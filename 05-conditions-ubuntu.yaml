@@ -2,5 +2,5 @@
   hosts: Test
   tasks:
   - name: Print Gathering information
-    ansible.builtin.print:
+    ansible.builtin.debug:
       msg: "{{ ansible_facts }}"
