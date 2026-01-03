@@ -3,7 +3,7 @@
   tasks:
   - name: print user data
     ansible.builtin.debug:
-      msg:  hello "{{ item }}" # item here is reserved keyword
+      msg:  hello"{{ item }}" # item here is reserved keyword
     loop:
     - Thiru
     - Manish
