@@ -1,5 +1,6 @@
 - name: install nginx based on OS\
   hosts: Application
+  become: yes
   tasks:
   - name: remove nginx if redhat
     ansible.builtin.dnf:
